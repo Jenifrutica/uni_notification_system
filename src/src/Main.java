@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); // Usando 'input' como le gusta a tu profe
 
-        System.out.println("=== REGISTRO DE NOTIFICACIÓN UNIVERSITARIA ===");
+        System.out.println("Sistema de Registro de notificaciones");
 
         // Menú de opciones
         System.out.println("\nPrimero, seleccione el medio de envío:");
