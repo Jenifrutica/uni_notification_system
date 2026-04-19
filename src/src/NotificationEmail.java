@@ -27,9 +27,6 @@ public class NotificationEmail extends Notification {
 
     @Override
     public void enviar() {
-        System.out.println("Enviando Email a: " + direccionEmail);
-        System.out.println("Asunto: " + asunto);
-        System.out.println("Cuerpo: " + getMensaje());
         this.setEstado(EstadoNotificacion.ENVIADO);
     }
     @Override

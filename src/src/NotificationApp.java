@@ -1,8 +1,8 @@
 public class NotificationApp extends Notification {
     private String tokenDispositivo;
-    private int prioridad; // 1: Alta, 2: Media, 3: Baja
+    private PrioridadNotificacion prioridad;
 
-    public NotificationApp(String codigo, String destinatario, String mensaje, String tokenDispositivo, int prioridad) {
+    public NotificationApp(String codigo, String destinatario, String mensaje, String tokenDispositivo, PrioridadNotificacion prioridad) {
         super(codigo, destinatario, mensaje);
         this.tokenDispositivo = tokenDispositivo;
         this.prioridad = prioridad;
@@ -16,20 +16,17 @@ public class NotificationApp extends Notification {
         this.tokenDispositivo = tokenDispositivo;
     }
 
-    public int getPrioridad() {
+    public PrioridadNotificacion getPrioridad() {
         return prioridad;
     }
 
-    public void setPrioridad(int prioridad) {
+    public void setPrioridad(PrioridadNotificacion prioridad) {
         this.prioridad = prioridad;
     }
 
 
     @Override
     public void enviar() {
-        System.out.println("Enviando Push Notification al token: " + tokenDispositivo);
-        System.out.println("Prioridad: " + prioridad);
-        System.out.println("Mensaje: " + getMensaje());
         this.setEstado(EstadoNotificacion.ENVIADO);
     }
 

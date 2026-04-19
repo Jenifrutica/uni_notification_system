@@ -26,14 +26,12 @@ public class NotificationSMS extends Notification {
 
     @Override
     public void enviar() {
-        System.out.println("Enviando SMS vía [" + proveedor + "] al número: " + numeroCelular);
-        System.out.println("Mensaje: " + getMensaje());
         this.setEstado(EstadoNotificacion.ENVIADO);
     }
 
     @Override
     public String toString() {
-        return "NotificationSMS{" +
+        return super.toString() + " -> NotificationSMS{" +
                 "numeroCelular='" + numeroCelular + '\'' +
                 ", proveedor='" + proveedor + '\'' +
                 '}';
