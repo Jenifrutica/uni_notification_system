@@ -4,16 +4,17 @@ public abstract class Notification {
     private String codigo;
     private String destinatario;
     private String mensaje;
+    private SituacionNotificacion situacion;
     private LocalDateTime fechaEnvio;
     private EstadoNotificacion estado;
 
-    public Notification(String codigo, String destinatario, String mensaje) {
+    public Notification(String codigo, String destinatario, String mensaje, SituacionNotificacion situacion) {
         this.codigo = codigo;
         this.destinatario = destinatario;
         this.mensaje = mensaje;
-        this.fechaEnvio = LocalDateTime.now(); // Se asigna automáticamente al crearla
-        this.estado = EstadoNotificacion.PENDIENTE; // Empieza siempre en pendiente
-
+        this.situacion = situacion;
+        this.fechaEnvio = LocalDateTime.now();
+        this.estado = EstadoNotificacion.PENDIENTE;
     }
 
 
@@ -43,6 +44,14 @@ public abstract class Notification {
         this.mensaje = mensaje;
     }
 
+    public SituacionNotificacion getSituacion() {
+        return situacion;
+    }
+
+    public void setSituacion(SituacionNotificacion situacion) {
+        this.situacion = situacion;
+    }
+
     public LocalDateTime getFechaEnvio() {
         return fechaEnvio;
     }
@@ -65,6 +74,7 @@ public abstract class Notification {
                 "codigo='" + codigo + '\'' +
                 ", destinatario='" + destinatario + '\'' +
                 ", mensaje='" + mensaje + '\'' +
+                ", situacion=" + situacion +
                 ", fechaEnvio=" + fechaEnvio +
                 ", estado=" + estado +
                 '}';

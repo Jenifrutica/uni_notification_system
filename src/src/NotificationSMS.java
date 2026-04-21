@@ -2,8 +2,8 @@ public class NotificationSMS extends Notification {
     private String numeroCelular;
     private String proveedor;
 
-    public NotificationSMS(String codigo, String destinatario, String mensaje, String numeroCelular, String proveedor) {
-        super(codigo, destinatario, mensaje);
+    public NotificationSMS(String codigo, String destinatario, String mensaje, SituacionNotificacion situacion, String numeroCelular, String proveedor) {
+        super(codigo, destinatario, mensaje, situacion);
         this.numeroCelular = numeroCelular;
         this.proveedor = proveedor;
     }

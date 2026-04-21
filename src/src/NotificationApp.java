@@ -2,8 +2,8 @@ public class NotificationApp extends Notification {
     private String tokenDispositivo;
     private PrioridadNotificacion prioridad;
 
-    public NotificationApp(String codigo, String destinatario, String mensaje, String tokenDispositivo, PrioridadNotificacion prioridad) {
-        super(codigo, destinatario, mensaje);
+    public NotificationApp(String codigo, String destinatario, String mensaje, SituacionNotificacion situacion, String tokenDispositivo, PrioridadNotificacion prioridad) {
+        super(codigo, destinatario, mensaje, situacion);
         this.tokenDispositivo = tokenDispositivo;
         this.prioridad = prioridad;
     }
@@ -32,7 +32,6 @@ public class NotificationApp extends Notification {
 
     @Override
     public String toString() {
-        // Usamos super.toString() para traer los datos de la madre y le pegamos los de la hija
         return super.toString() + " -> NotificationApp{" +
                 "tokenDispositivo='" + tokenDispositivo + '\'' +
                 ", prioridad=" + prioridad +
